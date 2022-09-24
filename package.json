@@ -1,6 +1,6 @@
 {
   "name": "@mini-dev/views",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "小程序自定义组件",
   "miniprogram": "libs",
   "main": "libs/index.js",
