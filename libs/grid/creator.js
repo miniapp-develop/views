@@ -17,15 +17,18 @@ function Grid() {
                 target: CHILD,
                 linked(target) {
                     this.notifyChildChanged(target, {
+                        cols: this.data.cols,
                         minCols: this.data.minCols,
-                        maxCols: this.data.maxCols,
-                        _mini_children: this.data._mini_children
+                        maxCols: this.data.maxCols
                     });
-                    this.data._mini_children++;
                 }
             }
         },
         properties: {
+            cols: {
+                type: Number,
+                value: -1
+            },
             minCols: {
                 type: Number,
                 value: 1
@@ -37,10 +40,11 @@ function Grid() {
         },
         data: {},
         observers: {
-            'minCols, maxCols': function (minCols, maxCols) {
+            'cols, minCols, maxCols': function (cols, minCols, maxCols) {
                 const children = this.getRelationNodes(RELATION_KEY);
                 for (const child of children) {
                     this.notifyChildChanged(child, {
+                        cols: cols,
                         minCols: minCols,
                         maxCols: maxCols
                     });
@@ -81,13 +85,15 @@ function GridItem() {
             styles: ''
         },
         methods: {
-            onNotifyChanged({maxCols, minCols}) {
-                const styles = {
-                    'min-width': '25%',
-                    'max-width': '100%'
-                };
-                styles['min-width'] = `${(100 / maxCols).toFixed(2)}%`;
-                styles['max-width'] = `${(100 / minCols).toFixed(2)}%`;
+            onNotifyChanged({cols, maxCols, minCols}) {
+                const styles = {};
+                if (cols > 0) {
+                    styles['width'] = `${(100 / cols).toFixed(2)}%`;
+                } else {
+                    styles['min-width'] = `${(100 / maxCols).toFixed(2)}%`;
+                    styles['max-width'] = `${(100 / minCols).toFixed(2)}%`;
+                    styles['flex'] = `1`;
+                }
                 const styleString = Object.entries(styles).map(([key, value]) => {
                     return key + ":" + value;
                 }).join(';');

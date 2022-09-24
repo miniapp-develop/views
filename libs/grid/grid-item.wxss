@@ -1,5 +1,4 @@
 .mini-grid-item {
-    min-width: 25%;
     text-align: center;
     position: relative;
 }
