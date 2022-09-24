@@ -1,12 +1,54 @@
 <view class="container">
-    <view class="ctrl" bind:tap="onTapCtrl">
+    <view class="section__header">change cols</view>
+    <view class="ctrl" bind:tap="onTapCtrlConfig1">
+        <label class="form-cell">
+            <view class="form-cell__name">cols</view>
+            <view class="form-cell__ctrl" data-name="cols.minus">
+                -
+            </view>
+            <view class="form-cell__value">
+                {{config1.cols}}
+            </view>
+            <view class="form-cell__ctrl" data-name="cols.add">
+                +
+            </view>
+        </label>
+        <label class="form-cell">
+            <view class="form-cell__name">itemCount</view>
+            <view class="form-cell__ctrl" data-name="itemCount.minus">
+                -
+            </view>
+            <view class="form-cell__value">
+                {{config1.itemCount}}
+            </view>
+            <view class="form-cell__ctrl" data-name="itemCount.add">
+                +
+            </view>
+        </label>
+    </view>
+    <grid mini-class="grid-class" cols="{{config1.cols}}">
+        <grid-item mini-class="grid-item-class"
+                   wx:for="{{config1.itemCount}}"
+                   wx:key="index"
+                   value="{{'grid-item-'+index}}"
+                   bind:tapped="onTap">
+            <view class="icons">
+                <image class="icon" src="service.svg"/>
+            </view>
+            <view class="text">项目{{index + 1}}</view>
+            <view class="badge">{{index + 10}}</view>
+        </grid-item>
+    </grid>
+
+    <view class="section__header">change minCols & maxCols</view>
+    <view class="ctrl" bind:tap="onTapCtrlConfig2">
         <label class="form-cell">
             <view class="form-cell__name">minCols</view>
             <view class="form-cell__ctrl" data-name="minCols.minus">
                 -
             </view>
             <view class="form-cell__value">
-                {{config.minCols}}
+                {{config2.minCols}}
             </view>
             <view class="form-cell__ctrl" data-name="minCols.add">
                 +
@@ -18,7 +60,7 @@
                 -
             </view>
             <view class="form-cell__value">
-                {{config.maxCols}}
+                {{config2.maxCols}}
             </view>
             <view class="form-cell__ctrl" data-name="maxCols.add">
                 +
@@ -30,16 +72,16 @@
                 -
             </view>
             <view class="form-cell__value">
-                {{config.itemCount}}
+                {{config2.itemCount}}
             </view>
             <view class="form-cell__ctrl" data-name="itemCount.add">
                 +
             </view>
         </label>
     </view>
-    <grid mini-class="grid-class" min-cols="{{config.minCols}}" max-cols="{{config.maxCols}}">
+    <grid mini-class="grid-class" min-cols="{{config2.minCols}}" max-cols="{{config2.maxCols}}">
         <grid-item mini-class="grid-item-class"
-                   wx:for="{{config.itemCount}}"
+                   wx:for="{{config2.itemCount}}"
                    wx:key="index"
                    value="{{'grid-item-'+index}}"
                    bind:tapped="onTap">

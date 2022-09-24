@@ -2,7 +2,7 @@
   "projectname": "views",
   "appid": "wx132bb522ad967270",
   "compileType": "miniprogram",
-  "libVersion": "2.12.0",
+  "libVersion": "2.12.3",
   "packOptions": {
     "ignore": [],
     "include": []
