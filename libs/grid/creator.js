@@ -1,8 +1,8 @@
-export const RELATION_KEY = 'mini/grid';
-export const PARENT = Behavior({});
-export const CHILD = Behavior({});
+const RELATION_KEY = 'mini/grid';
+const PARENT = Behavior({});
+const CHILD = Behavior({});
 
-export function Grid() {
+function Grid() {
     Component({
         options: {
             virtualHost: true,
@@ -60,7 +60,7 @@ export function Grid() {
     })
 }
 
-export function GridItem() {
+function GridItem() {
     return Component({
         options: {
             virtualHost: true,
@@ -100,3 +100,6 @@ export function GridItem() {
         }
     })
 }
+
+exports.Grid = Grid;
+exports.GridItem = GridItem;

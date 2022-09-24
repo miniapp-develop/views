@@ -1,3 +1,3 @@
-import {Grid} from "./creator";
+const {Grid} = require('./creator');
 
 Grid();
