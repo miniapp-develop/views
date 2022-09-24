@@ -1,7 +1,7 @@
 Page({
     data: {
         config1: {
-            cols: 2,
+            cols: 3,
             itemCount: 5
         },
         config2: {

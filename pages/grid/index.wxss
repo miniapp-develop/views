@@ -11,6 +11,7 @@
 .grid-item-class {
     box-sizing: border-box;
     padding: 0.5em 0;
+    overflow: hidden;
 }
 
 .icons {
