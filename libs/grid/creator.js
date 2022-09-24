@@ -16,12 +16,12 @@ function Grid() {
                 type: 'child',
                 target: CHILD,
                 linked(target) {
-                    const children = this.getRelationNodes(RELATION_KEY);
                     this.notifyChildChanged(target, {
-                        siblings: children.length,
                         minCols: this.data.minCols,
-                        maxCols: this.data.maxCols
+                        maxCols: this.data.maxCols,
+                        _mini_children: this.data._mini_children
                     });
+                    this.data._mini_children++;
                 }
             }
         },
@@ -35,17 +35,12 @@ function Grid() {
                 value: 5
             }
         },
-        data: {
-            _itemsLength: 0,
-            _miniIndex: 0
-        },
+        data: {},
         observers: {
             'minCols, maxCols': function (minCols, maxCols) {
                 const children = this.getRelationNodes(RELATION_KEY);
-                const siblings = children.length;
                 for (const child of children) {
                     this.notifyChildChanged(child, {
-                        siblings: siblings,
                         minCols: minCols,
                         maxCols: maxCols
                     });
@@ -69,11 +64,17 @@ function GridItem() {
         },
         externalClasses: ['mini-class'],
         behaviors: [CHILD],
-        properties: {},
         relations: {
             [RELATION_KEY]: {
                 type: 'parent',
                 target: PARENT
+            }
+        },
+        properties: {
+            value: {
+                type: Number,
+                optionalTypes: [String, Object],
+                value: 0
             }
         },
         data: {
@@ -95,7 +96,7 @@ function GridItem() {
                 });
             },
             onTap(e) {
-                this.triggerEvent('tapped', {}, {});
+                this.triggerEvent('tapped', {value: this.data.value}, {});
             }
         }
     })

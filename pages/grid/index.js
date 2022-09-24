@@ -3,11 +3,11 @@ Page({
         config: {
             minCols: 2,
             maxCols: 3,
-            itemCount:5
+            itemCount: 5
         }
     },
     onTap(e) {
-        console.log('点击了：' + e.detail.index);
+        console.log('点击了：', e.detail);
     },
     onTapCtrl(e) {
         const name = e.target.dataset.name;

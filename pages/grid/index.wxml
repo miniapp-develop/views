@@ -38,7 +38,11 @@
         </label>
     </view>
     <grid mini-class="grid-class" min-cols="{{config.minCols}}" max-cols="{{config.maxCols}}">
-        <grid-item mini-class="grid-item-class" wx:for="{{config.itemCount}}" wx:key="index" bind:tapped="onTap">
+        <grid-item mini-class="grid-item-class"
+                   wx:for="{{config.itemCount}}"
+                   wx:key="index"
+                   value="{{'grid-item-'+index}}"
+                   bind:tapped="onTap">
             <view class="icons">
                 <image class="icon" src="service.svg"/>
             </view>

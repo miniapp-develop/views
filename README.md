@@ -25,7 +25,10 @@ npm install @mini-dev/views
 
 ```xml
 <grid mini-class="grid-class" min-cols="2" max-cols="3">
-    <grid-item mini-class="grid-item-class" wx:for="{{config.itemCount}}" wx:key="index" 
+    <grid-item mini-class="grid-item-class" 
+        wx:for="{{items}}" 
+        wx:key="index" 
+        value="{{index}}" 
         bind:tapped="onTap">
         <view class="icons">
             <image class="icon" src="service.svg"/>
