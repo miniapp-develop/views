@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "grid": "/libs/grid/grid",
+    "grid-item": "/libs/grid/grid-item"
+  }
+}

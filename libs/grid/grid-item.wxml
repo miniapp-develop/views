@@ -1,0 +1,3 @@
+<view class="mini-view mini-grid-item mini-class" style="{{styles}}" bind:tap="onTap">
+    <slot></slot>
+</view>

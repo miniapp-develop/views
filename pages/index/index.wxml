@@ -1,0 +1,7 @@
+<view class="container">
+    <view class="v-item" wx:for="{{items}}"
+          wx:key="name"
+          data-name="{{item.name}}"
+          bind:tap="onTap">{{item.name}}
+    </view>
+</view>

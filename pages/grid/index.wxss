@@ -1,0 +1,66 @@
+.grid-class {
+    margin-top: 1em;
+    padding: 0.8em 0;
+    background: white;
+}
+
+.grid-item-class {
+    box-sizing: border-box;
+    padding: 0.5em 0;
+}
+
+.icons {
+    /*border: 1rpx solid red;*/
+    font-size: 0;
+    line-height: 0;
+}
+
+.icon {
+    width: 72rpx;
+    height: 72rpx;
+    /*border: 1rpx solid blue;*/
+}
+
+.text {
+    /*border: 1rpx solid green;*/
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    left: calc(50% + 36rpx);
+    min-width: 1.2em;
+    border-radius: 1em;
+    background: red;
+    color: white;
+    padding: 0.2em 0.4em 0.2em 0.3em;
+    font-size: 0.6em;
+}
+
+.ctrl {
+    margin-top: 1em;
+}
+
+.form-cell {
+    padding: 0.5em 1em;
+    display: flex;
+    background: white;
+    align-items: center;
+}
+
+.form-cell__name:after {
+    content: ':';
+}
+
+.form-cell__value {
+    border: 1px solid #e4e4e4;
+    min-width: 2em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.form-cell__ctrl {
+    flex: 1;
+    font-size: 2em;
+    text-align: center;
+}

@@ -1,0 +1,3 @@
+<view class="mini-view mini-grid mini-class">
+    <slot></slot>
+</view>
