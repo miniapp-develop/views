@@ -1,3 +1,3 @@
-import {Tab} from "./creator";
+const {Tab} = require('./creator');
 
 Tab();

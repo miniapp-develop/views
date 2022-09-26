@@ -2,7 +2,7 @@ export const RELATION_KEY = 'mini/tabbar';
 export const PARENT = Behavior({});
 export const CHILD = Behavior({});
 
-export function Tabbar() {
+function Tabbar() {
     Component({
         options: {
             virtualHost: true,
@@ -44,7 +44,7 @@ export function Tabbar() {
     })
 }
 
-export function Tab() {
+function Tab() {
     return Component({
         options: {
             virtualHost: true,

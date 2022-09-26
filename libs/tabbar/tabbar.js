@@ -1,3 +1,3 @@
-import {Tabbar} from "./creator";
+const {Tabbar} = require('./creator');
 
 Tabbar()
