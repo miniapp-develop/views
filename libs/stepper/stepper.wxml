@@ -1,0 +1,5 @@
+<view class="mini-view mini-stepper mini-class">
+    <slot name="increase"></slot>
+    <slot></slot>
+    <slot name="decrease"></slot>
+</view>
