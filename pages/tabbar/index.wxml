@@ -1,0 +1,30 @@
+<view class="container">
+    <view class="ctrl" bind:tap="onTapCtrlConfig1">
+        <label class="form-cell">
+            <view class="form-cell__name">itemCount</view>
+            <view class="form-cell__ctrl" data-name="itemCount.minus">
+                -
+            </view>
+            <view class="form-cell__value">
+                {{config1.itemCount}}
+            </view>
+            <view class="form-cell__ctrl" data-name="itemCount.add">
+                +
+            </view>
+        </label>
+    </view>
+    <tabbar mini-class="grid-class" active-id="{{config1.activeId}}" bindtapped="onTap">
+        <tabbar-item mini-class="grid-item-class"
+                     mini-active-class="grid-item-active-class"
+                     wx:for="{{config1.itemCount}}"
+                     wx:key="index"
+                     tab-id="{{index}}"
+                     value="{{'grid-item-'+index}}">
+            <view class="icons">
+                <image class="icon" src="service.svg"/>
+            </view>
+            <view class="text">项目{{index + 1}}</view>
+            <view class="badge">{{index + 10}}</view>
+        </tabbar-item>
+    </tabbar>
+</view>

@@ -1,0 +1,5 @@
+.mini-view-tabbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,3 @@
+<view class="mini-view mini-view-tabbar mini-class">
+    <slot></slot>
+</view>

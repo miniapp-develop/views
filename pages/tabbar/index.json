@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tabbar": "/libs/tabbar/tabbar",
+    "tabbar-item": "/libs/tabbar/tab"
+  }
+}
