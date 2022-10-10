@@ -1,5 +1,11 @@
 <view class="mini-view mini-stepper mini-class">
-    <slot name="decrease"></slot>
-    <slot></slot>
-    <slot name="increase"></slot>
+    <view class="stepper__ctrl" bind:tap="onTapDecrease">
+        <slot name="decrease"></slot>
+    </view>
+    <view class="stepper__display">
+        <slot></slot>
+    </view>
+    <view  class="stepper__ctrl" bind:tap="onTapIncrease">
+        <slot name="increase"></slot>
+    </view>
 </view>

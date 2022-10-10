@@ -49,23 +49,49 @@ function Stepper() {
                 child.onNotifyChanged(dataset);
             },
             onControl(type) {
-                let newValue = this.data.value;
+                const payload = {
+                    value: this.data.value,
+                    min: this.data.min,
+                    max: this.data.max
+                };
+                let newValue = payload.value;
                 if (type === 'decrease') {
                     newValue = this.data.value - this.data.step;
                 } else if (type === 'increase') {
                     newValue = this.data.value + this.data.step;
                 }
+                if (newValue > this.data.max) {
+                    this.triggerEvent('limited', {
+                        type: 'stepper.max',
+                        payload: payload
+                    });
+                    return;
+                }
+                if (newValue < this.data.min) {
+                    this.triggerEvent('limited', {
+                        type: 'stepper.min',
+                        payload: payload
+                    });
+                    return;
+                }
+                payload.value = newValue;
                 this.setData({
-                    value: newValue
+                    value: payload.value
                 });
                 const children = this.getRelationNodes(RELATION_KEY);
                 for (const child of children) {
-                    this.notifyChildChanged(child, {
-                        value: newValue,
-                        min: this.data.min,
-                        max: this.data.max
-                    });
+                    this.notifyChildChanged(child, payload);
                 }
+                this.triggerEvent('change', {
+                    type: 'stepper.change',
+                    payload: payload
+                });
+            },
+            onTapDecrease() {
+                this.onControl('decrease');
+            },
+            onTapIncrease() {
+                this.onControl('increase');
             }
         }
     })
@@ -123,13 +149,9 @@ function StepperDisplay() {
                 target: PARENT
             }
         },
-        properties: {
-            value: {
-                type: Number,
-                value: 0
-            }
+        data: {
+            value: 0
         },
-        data: {},
         methods: {
             onNotifyChanged({value, min, max}) {
                 this.setData({

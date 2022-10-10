@@ -44,6 +44,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "Stepper",
+          "pathName": "pages/stepper/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

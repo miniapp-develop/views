@@ -1,1 +1,0 @@
-<view bind:tap="onTap">增加</view>

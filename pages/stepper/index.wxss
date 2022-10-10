@@ -1,0 +1,16 @@
+.ctrl-increase, .ctrl-decrease {
+    padding: 0 1em;
+    background: cadetblue;
+    font-size: 2em;
+    color: white;
+}
+
+.demo {
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+.config {
+    padding: 1em;
+    font-size: 0.8em;
+}

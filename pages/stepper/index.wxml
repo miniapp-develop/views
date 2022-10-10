@@ -1,7 +1,29 @@
 <view>
-    <stepper-view>
-        <increase-view type="increase" slot="increase"/>
-        <decrease-view type="decrease" slot="decrease"/>
-        <display-view />
+    <view class="demo">演示</view>
+    <stepper-view max="{{max}}" min="{{min}}" step="{{step}}" value="1"
+                  bindlimited="onLimited"
+                  bindchange="onChanged">
+        <view class="ctrl-increase" slot="increase">+</view>
+        <view class="ctrl-decrease" slot="decrease">-</view>
+        <display-view/>
+    </stepper-view>
+
+    <view class="config">步长：</view>
+    <stepper-view max="3" min="1" step="1" value="1" bindchange="onStepChanged">
+        <view class="ctrl-increase" slot="increase">+</view>
+        <view class="ctrl-decrease" slot="decrease">-</view>
+        <display-view/>
+    </stepper-view>
+    <view class="config">最小值：</view>
+    <stepper-view max="5" min="0" step="1" value="0" bindchange="onMinChanged">
+        <view class="ctrl-increase" slot="increase">+</view>
+        <view class="ctrl-decrease" slot="decrease">-</view>
+        <display-view/>
+    </stepper-view>
+    <view class="config">最大值：</view>
+    <stepper-view max="10" min="5" step="1" value="10" bindchange="onMaxChanged">
+        <view class="ctrl-increase" slot="increase">+</view>
+        <view class="ctrl-decrease" slot="decrease">-</view>
+        <display-view/>
     </stepper-view>
 </view>

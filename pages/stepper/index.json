@@ -1,8 +1,6 @@
 {
   "usingComponents": {
     "stepper-view": "../../libs/stepper/stepper",
-    "increase-view": "./components/increase",
-    "decrease-view": "./components/decrease",
     "display-view": "./components/display"
   }
 }

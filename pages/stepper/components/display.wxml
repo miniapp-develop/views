@@ -1,1 +1,1 @@
-<view>这里是值:{{value}}</view>
+<view class="display">{{value}}</view>
