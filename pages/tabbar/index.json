@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "tabbar": "/libs/tabbar/tabbar",
-    "tabbar-item": "/libs/tabbar/tab"
+    "tabbar-item": "/libs/tabbar/tab",
+    "stepper-view": "/libs/stepper/stepper",
+    "display-view": "../stepper/components/display"
   }
 }

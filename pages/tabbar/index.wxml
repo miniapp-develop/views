@@ -1,17 +1,11 @@
 <view class="container">
-    <view class="ctrl" bind:tap="onTapCtrlConfig1">
-        <label class="form-cell">
-            <view class="form-cell__name">itemCount</view>
-            <view class="form-cell__ctrl" data-name="itemCount.minus">
-                -
-            </view>
-            <view class="form-cell__value">
-                {{config1.itemCount}}
-            </view>
-            <view class="form-cell__ctrl" data-name="itemCount.add">
-                +
-            </view>
-        </label>
+    <view class="form-cell">
+        <text>itemCount：</text>
+        <stepper-view max="10" min="1" step="1" value="{{config1.itemCount}}" bindchange="onConfig1Changed">
+            <view class="form-cell__ctrl" slot="increase">+</view>
+            <view class="form-cell__ctrl" slot="decrease">-</view>
+            <display-view/>
+        </stepper-view>
     </view>
     <tabbar mini-class="grid-class" active-id="{{config1.activeId}}" bindtapped="onTap">
         <tabbar-item mini-class="grid-item-class"
