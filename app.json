@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/grid/index",
-    "pages/tabbar/index"
+    "pages/tabbar/index",
+    "pages/stepper/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

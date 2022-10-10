@@ -6,6 +6,9 @@ Page({
             },
             {
                 name: 'tabbar'
+            },
+            {
+                name: 'stepper'
             }
         ]
     },

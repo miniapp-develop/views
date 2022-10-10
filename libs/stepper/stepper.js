@@ -1,3 +1,3 @@
-const {Grid: Stepper} = require('./creator');
+const {Stepper} = require('./creator');
 
 Stepper();

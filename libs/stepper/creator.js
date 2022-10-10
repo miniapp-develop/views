@@ -43,21 +43,29 @@ function Stepper() {
             }
         },
         data: {},
-        observers: {
-            'cols, minCols, maxCols': function (cols, minCols, maxCols) {
-                const children = this.getRelationNodes(RELATION_KEY);
-                for (const child of children) {
-                    this.notifyChildChanged(child, {
-                        cols: cols,
-                        minCols: minCols,
-                        maxCols: maxCols
-                    });
-                }
-            }
-        },
+        observers: {},
         methods: {
             notifyChildChanged(child, dataset) {
                 child.onNotifyChanged(dataset);
+            },
+            onControl(type) {
+                let newValue = this.data.value;
+                if (type === 'decrease') {
+                    newValue = this.data.value - this.data.step;
+                } else if (type === 'increase') {
+                    newValue = this.data.value + this.data.step;
+                }
+                this.setData({
+                    value: newValue
+                });
+                const children = this.getRelationNodes(RELATION_KEY);
+                for (const child of children) {
+                    this.notifyChildChanged(child, {
+                        value: newValue,
+                        min: this.data.min,
+                        max: this.data.max
+                    });
+                }
             }
         }
     })
@@ -89,8 +97,12 @@ function StepperControl() {
             onNotifyChanged({value, min, max}) {
 
             },
+            notifyChanged() {
+                const stepper = this.getRelationNodes(RELATION_KEY)[0];
+                stepper.onControl(this.data.type);
+            },
             onTap(e) {
-
+                this.notifyChanged();
             }
         }
     })
@@ -120,10 +132,9 @@ function StepperDisplay() {
         data: {},
         methods: {
             onNotifyChanged({value, min, max}) {
-
-            },
-            onTap(e) {
-
+                this.setData({
+                    value: value
+                });
             }
         }
     })

@@ -1,0 +1,7 @@
+<view>
+    <stepper-view>
+        <increase-view type="increase" slot="increase"/>
+        <decrease-view type="decrease" slot="decrease"/>
+        <display-view />
+    </stepper-view>
+</view>
