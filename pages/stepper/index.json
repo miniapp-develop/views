@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "stepper-view": "../../libs/stepper/stepper",
+    "stepper-view": "/libs/stepper/stepper",
     "display-view": "./components/display"
   }
 }
