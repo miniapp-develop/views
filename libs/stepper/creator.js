@@ -16,11 +16,7 @@ function Stepper() {
                 type: 'child',
                 target: CHILD,
                 linked(target) {
-                    this.notifyChildChanged(target, {
-                        value: this.data.value,
-                        min: this.data.min,
-                        max: this.data.max
-                    });
+                    this.notifyChildChanged(target, this.getCurrentPayload());
                 }
             }
         },
@@ -37,28 +33,41 @@ function Stepper() {
                 type: Number,
                 value: 1
             },
-            value: {
+            initValue: {
                 type: Number,
-                value: 0
+                value: 1
             }
         },
-        data: {},
-        observers: {},
+        data: {
+            _value: null
+        },
+        observers: {
+            initValue(value) {
+                if (this.data._value === null) {
+                    this.setData({
+                        _value: value
+                    });
+                }
+            }
+        },
         methods: {
+            getCurrentPayload() {
+                return {
+                    value: this.data._value,
+                    min: this.data.min,
+                    max: this.data.max
+                };
+            },
             notifyChildChanged(child, dataset) {
                 child.onNotifyChanged(dataset);
             },
             onControl(type) {
-                const payload = {
-                    value: this.data.value,
-                    min: this.data.min,
-                    max: this.data.max
-                };
+                const payload = this.getCurrentPayload();
                 let newValue = payload.value;
                 if (type === 'decrease') {
-                    newValue = this.data.value - this.data.step;
+                    newValue = this.data._value - this.data.step;
                 } else if (type === 'increase') {
-                    newValue = this.data.value + this.data.step;
+                    newValue = this.data._value + this.data.step;
                 }
                 if (newValue > this.data.max) {
                     this.triggerEvent('limited', {
@@ -76,7 +85,7 @@ function Stepper() {
                 }
                 payload.value = newValue;
                 this.setData({
-                    value: payload.value
+                    _value: payload.value
                 });
                 const children = this.getRelationNodes(RELATION_KEY);
                 for (const child of children) {
