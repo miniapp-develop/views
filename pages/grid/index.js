@@ -10,8 +10,11 @@ Page({
             itemCount: 5
         }
     },
-    onTap(e) {
-        console.log('点击了：', e.detail);
+    onTapGrid(e) {
+        console.log('onTapGrid 点击了：', e.detail);
+    },
+    onTapGridItem(e) {
+        console.log('onTapGridItem 点击了：', e.detail);
     },
     onTapCtrl(e, config) {
         const name = e.currentTarget.dataset.name;

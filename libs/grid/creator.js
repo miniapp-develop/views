@@ -54,6 +54,9 @@ function Grid() {
         methods: {
             notifyChildChanged(child, dataset) {
                 child.onNotifyChanged(dataset);
+            },
+            onTapChildItem(eventDetail) {
+                this.triggerEvent('tapped', eventDetail, {});
             }
         }
     })
@@ -102,7 +105,12 @@ function GridItem() {
                 });
             },
             onTap(e) {
-                this.triggerEvent('tapped', {value: this.data.value}, {});
+                const eventDetail = {value: this.data.value};
+                this.triggerEvent('tapped', eventDetail, {});
+                const grid = this.getRelationNodes(RELATION_KEY)[0];
+                if (grid) {
+                    grid.onTapChildItem(eventDetail);
+                }
             }
         }
     })

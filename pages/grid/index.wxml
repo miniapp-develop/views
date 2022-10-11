@@ -1,6 +1,6 @@
 <view class="container">
     <view class="section__header">change cols</view>
-    <view class="ctrl" >
+    <view class="ctrl">
         <label class="form-cell">
             <view class="form-cell__name">cols</view>
             <stepper-view max="10" min="1" step="1" init-value="{{config1.cols}}" bindchange="onConfig1Changed"
@@ -20,12 +20,12 @@
             </stepper-view>
         </label>
     </view>
-    <grid mini-class="grid-class" cols="{{config1.cols}}">
+    <grid mini-class="grid-class" cols="{{config1.cols}}" bind:tapped="onTapGrid">
         <grid-item mini-class="grid-item-class"
                    wx:for="{{config1.itemCount}}"
                    wx:key="index"
                    value="{{'grid-item-'+index}}"
-                   bind:tapped="onTap">
+                   bind:tapped="onTapGridItem">
             <view class="icons">
                 <image class="icon" src="service.svg"/>
             </view>
@@ -35,7 +35,7 @@
     </grid>
 
     <view class="section__header">change minCols & maxCols</view>
-    <view class="ctrl" >
+    <view class="ctrl">
         <label class="form-cell">
             <view class="form-cell__name">minCols</view>
             <stepper-view max="10" min="1" step="1" init-value="{{config2.minCols}}" bindchange="onConfig2Changed"
@@ -64,12 +64,12 @@
             </stepper-view>
         </label>
     </view>
-    <grid mini-class="grid-class" min-cols="{{config2.minCols}}" max-cols="{{config2.maxCols}}">
+    <grid mini-class="grid-class" min-cols="{{config2.minCols}}" max-cols="{{config2.maxCols}}" bind:tapped="onTapGrid">
         <grid-item mini-class="grid-item-class"
                    wx:for="{{config2.itemCount}}"
                    wx:key="index"
                    value="{{'grid-item-'+index}}"
-                   bind:tapped="onTap">
+                   bind:tapped="onTapGridItem">
             <view class="icons">
                 <image class="icon" src="service.svg"/>
             </view>
