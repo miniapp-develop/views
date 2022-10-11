@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "grid": "/libs/grid/grid",
-    "grid-item": "/libs/grid/grid-item"
+    "grid-item": "/libs/grid/grid-item",
+    "stepper-view": "/libs/stepper/stepper",
+    "display-view": "../stepper/components/display"
   }
 }

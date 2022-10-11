@@ -63,5 +63,6 @@
 .form-cell__ctrl {
     flex: 1;
     font-size: 2em;
+    min-width: 2em;
     text-align: center;
 }

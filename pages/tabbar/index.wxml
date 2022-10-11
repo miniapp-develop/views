@@ -1,7 +1,7 @@
 <view class="container">
     <view class="form-cell">
         <text>itemCount：</text>
-        <stepper-view max="10" min="1" step="1" value="{{config1.itemCount}}" bindchange="onConfig1Changed">
+        <stepper-view max="10" min="1" step="1" init-value="{{config1.itemCount}}" bindchange="onConfig1Changed">
             <view class="form-cell__ctrl" slot="increase">+</view>
             <view class="form-cell__ctrl" slot="decrease">-</view>
             <display-view/>

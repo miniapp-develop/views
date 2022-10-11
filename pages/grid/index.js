@@ -14,34 +14,15 @@ Page({
         console.log('点击了：', e.detail);
     },
     onTapCtrl(e, config) {
-        const name = e.target.dataset.name;
-        const [target, op] = name.split('.');
-        if (op === 'add') {
-            if (target === 'minCols' && this.data[config].minCols + 1 > this.data[config].maxCols) {
-                console.warn('minCols 不能大于 maxCols');
-                return;
-            }
-            this.setData({
-                [`${config}.${target}`]: this.data[config][target] + 1
-            });
-        } else if (op === 'minus') {
-            if (this.data[config][target] === 1) {
-                console.warn(target + ' 不能小于 1');
-                return;
-            }
-            if (target === 'maxCols' && this.data[config].maxCols - 1 < this.data[config].minCols) {
-                console.warn('maxCols 不能小于 minCols');
-                return;
-            }
-            this.setData({
-                [`${config}.${target}`]: this.data[config][target] - 1
-            });
-        }
+        const name = e.currentTarget.dataset.name;
+        this.setData({
+            [`${config}.${name}`]: e.detail.payload.value
+        });
     },
-    onTapCtrlConfig1(e) {
+    onConfig1Changed(e) {
         this.onTapCtrl(e, 'config1');
     },
-    onTapCtrlConfig2(e) {
+    onConfig2Changed(e) {
         this.onTapCtrl(e, 'config2');
     }
 })

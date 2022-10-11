@@ -1,29 +1,23 @@
 <view class="container">
     <view class="section__header">change cols</view>
-    <view class="ctrl" bind:tap="onTapCtrlConfig1">
+    <view class="ctrl" >
         <label class="form-cell">
             <view class="form-cell__name">cols</view>
-            <view class="form-cell__ctrl" data-name="cols.minus">
-                -
-            </view>
-            <view class="form-cell__value">
-                {{config1.cols}}
-            </view>
-            <view class="form-cell__ctrl" data-name="cols.add">
-                +
-            </view>
+            <stepper-view max="10" min="1" step="1" init-value="{{config1.cols}}" bindchange="onConfig1Changed"
+                          data-name="cols">
+                <view class="form-cell__ctrl" slot="increase">+</view>
+                <view class="form-cell__ctrl" slot="decrease">-</view>
+                <display-view/>
+            </stepper-view>
         </label>
         <label class="form-cell">
             <view class="form-cell__name">itemCount</view>
-            <view class="form-cell__ctrl" data-name="itemCount.minus">
-                -
-            </view>
-            <view class="form-cell__value">
-                {{config1.itemCount}}
-            </view>
-            <view class="form-cell__ctrl" data-name="itemCount.add">
-                +
-            </view>
+            <stepper-view max="10" min="1" step="1" init-value="{{config1.itemCount}}" bindchange="onConfig1Changed"
+                          data-name="itemCount">
+                <view class="form-cell__ctrl" slot="increase">+</view>
+                <view class="form-cell__ctrl" slot="decrease">-</view>
+                <display-view/>
+            </stepper-view>
         </label>
     </view>
     <grid mini-class="grid-class" cols="{{config1.cols}}">
@@ -41,42 +35,33 @@
     </grid>
 
     <view class="section__header">change minCols & maxCols</view>
-    <view class="ctrl" bind:tap="onTapCtrlConfig2">
+    <view class="ctrl" >
         <label class="form-cell">
             <view class="form-cell__name">minCols</view>
-            <view class="form-cell__ctrl" data-name="minCols.minus">
-                -
-            </view>
-            <view class="form-cell__value">
-                {{config2.minCols}}
-            </view>
-            <view class="form-cell__ctrl" data-name="minCols.add">
-                +
-            </view>
+            <stepper-view max="10" min="1" step="1" init-value="{{config2.minCols}}" bindchange="onConfig2Changed"
+                          data-name="minCols">
+                <view class="form-cell__ctrl" slot="increase">+</view>
+                <view class="form-cell__ctrl" slot="decrease">-</view>
+                <display-view/>
+            </stepper-view>
         </label>
         <label class="form-cell">
             <view class="form-cell__name">maxCols</view>
-            <view class="form-cell__ctrl" data-name="maxCols.minus">
-                -
-            </view>
-            <view class="form-cell__value">
-                {{config2.maxCols}}
-            </view>
-            <view class="form-cell__ctrl" data-name="maxCols.add">
-                +
-            </view>
+            <stepper-view max="10" min="1" step="1" init-value="{{config2.maxCols}}" bindchange="onConfig2Changed"
+                          data-name="maxCols">
+                <view class="form-cell__ctrl" slot="increase">+</view>
+                <view class="form-cell__ctrl" slot="decrease">-</view>
+                <display-view/>
+            </stepper-view>
         </label>
         <label class="form-cell">
             <view class="form-cell__name">itemCount</view>
-            <view class="form-cell__ctrl" data-name="itemCount.minus">
-                -
-            </view>
-            <view class="form-cell__value">
-                {{config2.itemCount}}
-            </view>
-            <view class="form-cell__ctrl" data-name="itemCount.add">
-                +
-            </view>
+            <stepper-view max="10" min="1" step="1" init-value="{{config2.itemCount}}" bindchange="onConfig2Changed"
+                          data-name="itemCount">
+                <view class="form-cell__ctrl" slot="increase">+</view>
+                <view class="form-cell__ctrl" slot="decrease">-</view>
+                <display-view/>
+            </stepper-view>
         </label>
     </view>
     <grid mini-class="grid-class" min-cols="{{config2.minCols}}" max-cols="{{config2.maxCols}}">
