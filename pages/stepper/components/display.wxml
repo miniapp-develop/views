@@ -1,1 +1,1 @@
-<view class="display">{{value}}</view>
+<view class="display">value={{value}}</view>

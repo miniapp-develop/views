@@ -7,7 +7,6 @@
         <view class="ctrl-decrease" slot="decrease">-</view>
         <display-view/>
     </stepper-view>
-
     <view class="config">步长：</view>
     <stepper-view max="3" min="1" step="1" init-value="1" bindchange="onStepChanged">
         <view class="ctrl-increase" slot="increase">+</view>
