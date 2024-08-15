@@ -5,7 +5,7 @@
 ## 组件列表
 
 1. Grid
-2. Safe
+2. Safe（处理 iphone 手机底部小黑条的边距问题）
 
 ## 使用方式
 
@@ -14,6 +14,8 @@
 ```shell script
 npm install @mini-dev/views
 ```
+
+*参考：开启微信小程序的 npm 支持： https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html*
 
 ### Grid
 
@@ -54,7 +56,7 @@ npm install @mini-dev/views
 }
 ```
 
-```xml
+```html
 
 <safe-area mini-class="xxx" styles="xxx"/>
 <safe-bottom mini-class="xxx" styles="xxx"/>
