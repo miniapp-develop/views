@@ -1,15 +1,10 @@
 const RELATION_KEY = 'mini/grid';
 const PARENT = Behavior({});
 const CHILD = Behavior({});
+const {MiniComponent} = require('../internal');
 
 function Grid() {
-    Component({
-        options: {
-            virtualHost: true,
-            multipleSlots: true,
-            pureDataPattern: /^_/
-        },
-        externalClasses: ['mini-class'],
+    MiniComponent({
         behaviors: [PARENT],
         relations: {
             [RELATION_KEY]: {
@@ -60,13 +55,7 @@ function Grid() {
 }
 
 function GridItem() {
-    return Component({
-        options: {
-            virtualHost: true,
-            multipleSlots: true,
-            pureDataPattern: /^_/
-        },
-        externalClasses: ['mini-class'],
+    return MiniComponent({
         behaviors: [CHILD],
         relations: {
             [RELATION_KEY]: {

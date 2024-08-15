@@ -1,5 +1,6 @@
-@import "../styles.wxss";
-.mini-safe-bottom {
+@import "./safe.base.wxss";
+
+.safe-bottom {
     position: fixed;
     bottom: 0;
     left: 0;

@@ -1,0 +1,3 @@
+<view class="safe-area safe-bottom mini-class" style="{{styles}}">
+    <slot></slot>
+</view>
