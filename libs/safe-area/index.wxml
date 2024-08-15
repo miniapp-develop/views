@@ -1,0 +1,3 @@
+<view class="mini-safe-padding mini-class">
+    <slot></slot>
+</view>

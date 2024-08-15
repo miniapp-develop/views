@@ -1,0 +1,8 @@
+<view class="container">
+    <safe-area mini-class="mini-class-1">
+        <view class="content-1">safe view 1</view>
+    </safe-area>
+    <safe-bottom miin-class="mini-class-2">
+        <view class="content-2">safe bottom 2</view>
+    </safe-bottom>
+</view>

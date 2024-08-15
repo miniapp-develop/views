@@ -3,6 +3,9 @@ Page({
         items: [
             {
                 name: 'grid'
+            },
+            {
+                name: 'safe'
             }
         ]
     },

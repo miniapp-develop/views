@@ -1,0 +1,18 @@
+.container {
+    background: #e4e4e4;
+}
+
+.mini-class-1 {
+    background: red;
+}
+
+.mini-class-2 {
+    background: red;
+}
+
+.content-1, .content-2 {
+    text-align: center;
+    height: 10vh;
+    background: green;
+    color: white;
+}
