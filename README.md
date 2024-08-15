@@ -5,6 +5,7 @@
 ## 组件列表
 
 1. Grid
+2. Safe
 
 ## 使用方式
 
@@ -26,12 +27,13 @@ npm install @mini-dev/views
 ```
 
 ```xml
+
 <grid mini-class="grid-class" min-cols="2" max-cols="3">
-    <grid-item mini-class="grid-item-class" 
-        wx:for="{{items}}" 
-        wx:key="index" 
-        value="{{index}}" 
-        bind:tapped="onTap">
+    <grid-item mini-class="grid-item-class"
+               wx:for="{{items}}"
+               wx:key="index"
+               value="{{index}}"
+               bind:tapped="onTap">
         <view class="icons">
             <image class="icon" src="service.svg"/>
         </view>
@@ -41,7 +43,29 @@ npm install @mini-dev/views
 </grid>
 ```
 
+### Safe views
+
+```json
+{
+  "usingComponents": {
+    "safe-area": "@mini-dev/views/safe/safe-area",
+    "safe-bottom": "@mini-dev/views/safe/safe-bottom"
+  }
+}
+```
+
+```xml
+
+<safe-area mini-class="xxx" styles="xxx"/>
+<safe-bottom mini-class="xxx" styles="xxx"/>
+```
+
 ## ChangeLog
 
+### 0.0.3
+
+1. 支持 Safe Views
+
 ### 0.0.2
+
 1. 支持 Grid
