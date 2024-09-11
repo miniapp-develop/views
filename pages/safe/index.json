@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "safe-area": "/libs/safe/safe-area",
+    "safe-toolbar": "/libs/safe/safe-toolbar",
     "safe-bottom": "/libs/safe/safe-bottom"
   }
 }

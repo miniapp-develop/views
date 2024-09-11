@@ -1,0 +1,6 @@
+<view>
+    <view class="status-bar" style="height:{{statusBarHeight}}px;"></view>
+    <view style="height:{{toolbarHeight}}px;padding-right:{{innerPaddingRight}}px;background:#ff5500;">
+        <slot></slot>
+    </view>
+</view>

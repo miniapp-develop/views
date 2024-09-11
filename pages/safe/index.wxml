@@ -1,4 +1,7 @@
 <view class="container">
+    <safe-toolbar>
+        <view >Toolbar</view>
+    </safe-toolbar>
     <safe-area mini-class="mini-class-1">
         <view class="content-1">safe view 1</view>
     </safe-area>

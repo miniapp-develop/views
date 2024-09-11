@@ -2,7 +2,7 @@
     "projectname": "views",
     "appid": "wx9029e39ac1befc18",
     "compileType": "miniprogram",
-    "libVersion": "2.12.3",
+    "libVersion": "2.20.1",
     "packOptions": {
         "ignore": [],
         "include": []
@@ -38,6 +38,13 @@
     "condition": {
         "miniprogram": {
             "list": [
+                {
+                    "name": "safe",
+                    "pathName": "pages/safe/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
                 {
                     "name": "Grid",
                     "pathName": "pages/grid/index",
